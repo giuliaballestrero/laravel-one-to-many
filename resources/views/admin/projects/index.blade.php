@@ -44,7 +44,7 @@
                         <td>{{ $project->description }}</td>
                         <td>{{ $project->thumb }}</td>
                         <td>{{ $project->creation_date }}</td>
-                        <td>{{ $project->type }}</td>
+                        <td>{{ $project->type->name }}</td>
                         <td class="text-center">
                             @if ($project->completed == 0)
                                 <i class="fa-solid fa-spinner"></i>

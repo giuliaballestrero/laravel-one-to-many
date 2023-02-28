@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Project;
+use App\Models\Type;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -20,7 +21,7 @@ class ProjectController extends Controller
         'description' => 'required|min:8|max:200',
         'thumb' => 'required',
         'creation_date' => 'required|date',
-        'type' => 'min:2|max:50'
+        'type_id'=> 'required|exists:types,id'
     ];
 
     protected $messages = [
@@ -38,8 +39,7 @@ class ProjectController extends Controller
         'creation_date.required' => 'Data creazione progetto non inserita',
         'creation_date.date' => 'La data di creazione deve essere un numero',
 
-        'type.min' => 'Inserire almeno 2 caratteri',
-        'type.max' => 'Superati i 50 caratteri masssimi consentiti per il tipo',
+        'type_id.required' => 'Per favore, selezionare una tipologia',
 
     ];
 
@@ -58,7 +58,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create', ["project"=> new Project()]);
+        return view('admin.projects.create', ["project"=> new Project(), 'types'=> Type::all()]);
     }
 
     /**
@@ -115,7 +115,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project) //Uso la dependency injection al posto di passare l'id e fare find or fail
     {
-        return view('admin.projects.edit', compact('project'));
+        return view('admin.projects.edit', compact('project'), ['types'=> Type::all()]);
     }
 
     /**

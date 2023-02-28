@@ -51,8 +51,14 @@
 
         <div class="form-outline w-25 mb-3">
             <label for="Type" class="form-label @error('type') is-invalid @enderror">Type</label>
-            <input type="text" class="form-control" id="type" placeholder="Insert type" name="type" value="{{old('type', $project->type)}}">
-        @error('type')
+            <select  class="form-control" id="type_id" name="type_id" >
+                @foreach ($types as $type)
+                    <option value="{{ $type->id }}"
+                        {{ old('type_id', $project->type_id) ==  $type->id ? 'selected' : '' }}> {{ $type->name }}
+                    </option>
+                @endforeach
+            </select>
+        @error('type_id')
             <div class="invalid-feedback px-2">
                 <i class="fa-solid fa-circle-exclamation pe-1"></i>{{ $message }}
             </div>

@@ -14,6 +14,11 @@ class Project extends Model
     // Inserire lista tabella quando nella funzione store() usiamo fill()
     protected $fillable = ['slug', 'title', 'description', 'thumb', 'creation_date', 'type', 'completed'];
 
+    // definisco la relazione one to many (più projects dipendono da un singolo type)
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
+
     //uso la soft deletes
     use SoftDeletes;
 

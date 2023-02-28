@@ -1,0 +1,95 @@
+@import '~bootstrap/scss/bootstrap';
+
+//Importo FontAwesome
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+body {
+    font-family: 'Urbanist', sans-serif;
+    background-color: #e5e7ff;
+}
+
+header {
+    nav {
+        background-color: #aba9ee;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        color: #e5e7ff;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: bold;
+    }
+}
+
+main {
+
+    div .card {
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+        border-radius: 30px 30px;
+
+        h2 {
+            border-bottom: 1px solid #aba9ee;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .card-header {
+            background-color: #aba9ee;
+        }
+
+        .next-prev {
+            color: #aba9ee;
+        }
+
+        .next-prev,
+        .next-prev-disabled {
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .next-prev-disabled {
+            color: rgba(128, 128, 128, 0.532);
+            pointer-events: none;
+
+        }
+
+    }
+
+    table {
+        background-color: #aba9ee61;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 20px 20px;
+
+        .btn {
+            background-color: #9aae929a !important;
+            border: none !important;
+        }
+    
+        .fa-solid,
+        .fa-regular {
+            color: rgb(7, 6, 6);
+        }
+
+        .fa-circle-check {
+            color: green;
+        }
+
+    }
+
+    .page-link {
+        color: #aba9ee !important;
+
+        &:hover {
+            color: #fff !important;
+            background-color: #aba9ee;
+        }
+    }
+
+    .page-item.active .page-link {
+        color: #fff !important;
+        background: #aba9ee !important;
+        border: #fff !important;
+    }
+
+}

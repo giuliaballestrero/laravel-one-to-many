@@ -40,7 +40,7 @@
                 {{ $project->description }}
             </p>
             <p class="fw-bold py-3">
-                Tag: <a class="btn btn-disabled btn-dark rounded-pill">{{$project->type->name}}<a>
+                Tag: <a class="btn btn-disabled rounded-pill" style="background-color: {{$project->type->color}} ">{{$project->type->name}}<a>
             </p>
             <div class="d-flex justify-content-center">
                 <a href="{{ route('admin.projects.edit', $project->slug) }}" class="btn btn-success rounded-circle me-2">

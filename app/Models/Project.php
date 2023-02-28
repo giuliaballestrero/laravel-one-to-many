@@ -12,7 +12,7 @@ class Project extends Model
     use HasFactory;
 
     // Inserire lista tabella quando nella funzione store() usiamo fill()
-    protected $fillable = ['slug', 'title', 'description', 'thumb', 'creation_date', 'type', 'completed'];
+    protected $fillable = ['slug', 'title', 'description', 'thumb', 'creation_date', 'type_id', 'completed'];
 
     // definisco la relazione one to many (più projects dipendono da un singolo type)
     public function type(){

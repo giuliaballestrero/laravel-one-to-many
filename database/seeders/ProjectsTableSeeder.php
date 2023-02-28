@@ -20,7 +20,7 @@ class ProjectsTableSeeder extends Seeder
     {
         for ($i=0; $i < 30; $i++) {
             $newProject = new Project();
-            $newProject->category_id = Type::inRandomOrder()->first()->id ;
+            $newProject->type_id = Type::inRandomOrder()->first()->id ;
             $newProject->title = $faker->unique()->realTextBetween(5, 30);
             $newProject->slug = Str::slug($newProject->title);
             $newProject->description = $faker->realText(100);

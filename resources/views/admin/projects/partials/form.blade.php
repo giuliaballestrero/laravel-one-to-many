@@ -50,7 +50,7 @@
         </div>
 
         <div class="form-outline w-25 mb-3">
-            <label for="Type" class="form-label @error('type') is-invalid @enderror">Type</label>
+            <label for="Type" class="form-label @error('type_id') is-invalid @enderror">Type</label>
             <select  class="form-control" id="type_id" name="type_id" >
                 <option value="">Select type...</option>
                 @foreach ($types as $type)
